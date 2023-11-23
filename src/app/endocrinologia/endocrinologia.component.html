@@ -1,0 +1,9 @@
+<form [formGroup]="endocrinologiaForm" (ngSubmit)="enviarFormulario()">
+  <label for="tipoInsulina">Tipo Insulina:</label>
+  <input type="text" id="tipoInsulina" formControlName="tipoInsulina"/>
+
+  <label for="posologia">E-mail:</label>
+  <input type="text" id="posologia" formControlName="posologia"/>
+
+  <button type="submit">Enviar</button>
+</form>
