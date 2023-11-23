@@ -29,8 +29,7 @@ export class UsuarioComponent implements OnChanges, OnInit {
   }
 
   calcularIMC(peso: number, altura: number): number {
-    const alturaEmMetros: number = altura / 100;
-    return peso / (alturaEmMetros * alturaEmMetros);
+    return peso / (altura * altura);
   }
 
   interpretarIMC(imc: number): string {
