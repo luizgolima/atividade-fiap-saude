@@ -29,9 +29,11 @@ export class EndocrinologiaComponent implements OnInit {
 
 
   enviarFormulario(): void {
-    this.endocrinologia.criadoEm = new Date().toDateString();
-    this.endocrinologia.nivelGlicose = this.endocrinologiaForm.value.nivelGlicose;
-    this.endocrinologia.nivelHemoglobinaAc1 = this.endocrinologiaForm.value.nivelHemoglobinaAc1;
+    this.endocrinologia = {
+      criadoEm: new Date().toISOString(),
+      nivelGlicose: this.endocrinologiaForm.value.nivelGlicose,
+      nivelHemoglobinaAc1: this.endocrinologiaForm.value.nivelHemoglobinaAc1
+    };
     this.service.criarGerenciamentoEndocrinologia(this.endocrinologia).subscribe((resposta: Endocrinologia): void => {
       console.log(resposta);
     });

@@ -27,9 +27,11 @@ export class InsulinaComponent implements OnInit {
   }
 
   enviarFormulario(): void {
-    this.insulina.criadoEm = new Date().toDateString();
-    this.insulina.tipoInsulina = this.insulinaForm.value.tipoInsulina;
-    this.insulina.posologia = this.insulinaForm.value.posologia;
+    this.insulina = {
+      criadoEm: new Date().toISOString(),
+      tipoInsulina: this.insulinaForm.value.tipoInsulina,
+      posologia: this.insulinaForm.value.posologia
+    };
     this.service.criarGerenciamentoInsulina(this.insulina).subscribe((resposta: Insulina): void => {
       console.log(resposta);
     });

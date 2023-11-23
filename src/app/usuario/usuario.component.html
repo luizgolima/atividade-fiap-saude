@@ -11,26 +11,49 @@
 </div>
 
 <nav class="py-8 px-4 flex justify-center items-center gap-4">
-  <a [routerLink]="['/insulina']" class="p-8 text-center rounded-md shadow-lg cursor-pointer">
+  <a [routerLink]="['/insulina']" class="p-8 text-center rounded-md shadow-lg cursor-pointer bg-white">
     Gerenciamento de Insulina
   </a>
-  <a [routerLink]="['/endocrinologia']" class="p-8 text-center rounded-md shadow-lg cursor-pointer">
+  <a [routerLink]="['/endocrinologia']"
+     class="p-8 text-center rounded-md shadow-lg cursor-pointer bg-white">
     Dados Endocrinologia
   </a>
 </nav>
 
-<div *ngIf="usuario | async as userData" class="p-8">
+<div *ngIf="usuario | async as userData" class="p-4">
   <h2 class="text-2xl font-bold mb-4 text-center">Lista de Dados de Endocrinologia</h2>
-  <ul>
-    <li *ngFor="let endocrino of userData.listaDados" class="mb-2">{{endocrino.nivelGlicose}}</li>
-    <li *ngFor="let endocrino of userData.listaDados" class="mb-2">{{endocrino.nivelHemoglobinaAc1}}</li>
-  </ul>
+  <table class="w-full border bg-white rounded-md overflow-hidden shadow-md">
+    <thead>
+    <tr>
+      <th class="border p-2 text-center bg-blue-500 text-white">Data</th>
+      <th class="border p-2 text-center bg-blue-500 text-white">Glicose</th>
+      <th class="border p-2 text-center bg-blue-500 text-white">HemoglobinaAc1</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let endocrino of userData.listaDados" class="border-b">
+      <td class="border p-2 text-center">{{ endocrino.criadoEm | date: 'dd/MM/yyyy HH:mm' }}</td>
+      <td class="border p-2 text-center">{{ endocrino.nivelGlicose }}</td>
+      <td class="border p-2 text-center">{{ endocrino.nivelHemoglobinaAc1 }}</td>
+    </tr>
+    </tbody>
+  </table>
 
-  <h2 class="text-2xl font-bold mt-8 text-center">Lista de Dados de Insulina</h2>
-  <ul>
-    <li *ngFor="let insulina of userData.gerenciamentosInsulina" class="mb-2">{{insulina.tipoInsulina}}</li>
-    <li *ngFor="let insulina of userData.gerenciamentosInsulina" class="mb-2">{{insulina.posologia}}</li>
-  </ul>
+  <h2 class="text-2xl font-bold mt-8 mb-4 text-center">Lista de Dados de Insulina</h2>
+  <table class="w-full border bg-white rounded-md overflow-hidden shadow-md">
+    <thead>
+    <tr>
+      <th class="border p-2 text-center bg-blue-500 text-white">Data</th>
+      <th class="border p-2 text-center bg-blue-500 text-white">Insulina</th>
+      <th class="border p-2 text-center bg-blue-500 text-white">Posologia</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let insulina of userData.gerenciamentosInsulina" class="border-b">
+      <td class="border p-2 text-center">{{ insulina.criadoEm | date: 'dd/MM/yyyy HH:mm' }}</td>
+      <td class="border p-2 text-center">{{ insulina.tipoInsulina.toLowerCase() }}</td>
+      <td class="border p-2 text-center">{{ insulina.posologia }}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>
-
-

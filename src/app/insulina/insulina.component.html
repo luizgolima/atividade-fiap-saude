@@ -2,7 +2,12 @@
       class="max-w-md mx-auto mt-8 p-8 bg-white rounded shadow-md">
   <div class="mb-4">
     <label for="tipoInsulina" class="block text-gray-700 text-sm font-bold mb-2">Tipo Insulina:</label>
-    <input type="text" id="tipoInsulina" formControlName="tipoInsulina" class="w-full p-2 border rounded-md">
+    <select id="tipoInsulina" formControlName="tipoInsulina" class="w-full p-2 border rounded-md">
+      <option value="LENTA">Lenta</option>
+      <option value="INTERMEDIARIA">Intermediária</option>
+      <option value="RAPIDA">Rápida</option>
+      <option value="ULTRA_RAPIDA">Ultra Rápida</option>
+    </select>
   </div>
   <div class="mb-4">
     <label for="posologia" class="block text-gray-700 text-sm font-bold mb-2">Posologia:</label>
