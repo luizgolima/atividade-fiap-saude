@@ -2,10 +2,10 @@
   <app-header></app-header>
   <main *ngIf="usuario | async as userData">
     <div class="py-16 flex flex-col justify-center items-center">
-      <h1 class="mb-4 text-3xl text-white font-extrabold">Olá, {{userData.nomeCompleto}}</h1>
-      <p class="mb-2 text-white">Seu IMC atual: {{ calcularIMC(userData.peso, userData.altura) | number:'1.1-1' }}</p>
-      <p class="text-white">Situação: {{ interpretarIMC(calcularIMC(userData.peso, userData.altura)) }}</p>
-      <small class="text-white">Peso atual: {{userData.peso}} | Altura: {{userData.altura}}</small>
+      <h1 class="mb-4 text-3xl text-white font-extrabold">Olá, {{ userData.nomeCompleto }}</h1>
+      <p class="mb-2 text-white">Seu IMC atual: {{  calcularIMC(userData.peso, userData.altura) | number:'1.1-1'  }}</p>
+      <p class="text-white">Situação: {{  interpretarIMC(calcularIMC(userData.peso, userData.altura))  }}</p>
+      <small class="text-white">Peso atual: {{ userData.peso }}kg | Altura: {{userData.altura }}m</small>
     </div>
   </main>
 </div>
