@@ -32,7 +32,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let endocrino of userData.listaDados" class="border-b">
-      <td class="border p-2 text-center">{{ endocrino.criadoEm | date: 'dd/MM/yyyy HH:mm' }}</td>
+      <td class="border p-2 text-center">{{ endocrino.criadoEm  }}</td>
       <td class="border p-2 text-center">{{ endocrino.nivelGlicose }}</td>
       <td class="border p-2 text-center">{{ endocrino.nivelHemoglobinaAc1 }}</td>
     </tr>
@@ -50,7 +50,7 @@
     </thead>
     <tbody>
     <tr *ngFor="let insulina of userData.gerenciamentosInsulina" class="border-b">
-      <td class="border p-2 text-center">{{ insulina.criadoEm | date: 'dd/MM/yyyy HH:mm' }}</td>
+      <td class="border p-2 text-center">{{ insulina.criadoEm }}</td>
       <td class="border p-2 text-center">{{ insulina.tipoInsulina.toLowerCase() }}</td>
       <td class="border p-2 text-center">{{ insulina.posologia }}</td>
     </tr>

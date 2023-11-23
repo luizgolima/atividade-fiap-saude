@@ -28,7 +28,7 @@ export class InsulinaComponent implements OnInit {
 
   enviarFormulario(): void {
     this.insulina = {
-      criadoEm: new Date().toISOString(),
+      criadoEm: new Date().toString(),
       tipoInsulina: this.insulinaForm.value.tipoInsulina,
       posologia: this.insulinaForm.value.posologia
     };

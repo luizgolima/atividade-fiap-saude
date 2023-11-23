@@ -30,7 +30,7 @@ export class EndocrinologiaComponent implements OnInit {
 
   enviarFormulario(): void {
     this.endocrinologia = {
-      criadoEm: new Date().toISOString(),
+      criadoEm: new Date().toString(),
       nivelGlicose: this.endocrinologiaForm.value.nivelGlicose,
       nivelHemoglobinaAc1: this.endocrinologiaForm.value.nivelHemoglobinaAc1
     };
