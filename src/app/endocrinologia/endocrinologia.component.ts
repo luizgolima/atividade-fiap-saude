@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { EndocrinologiaService } from "./service/endocrinologia.service";
 import { Endocrinologia } from "./model/endocrinologia";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-endocrinologia',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './endocrinologia.component.html',
   styleUrl: './endocrinologia.component.scss'
 })

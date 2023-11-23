@@ -1,9 +1,13 @@
-<form [formGroup]="endocrinologiaForm" (ngSubmit)="enviarFormulario()">
-  <label for="tipoInsulina">Tipo Insulina:</label>
-  <input type="text" id="tipoInsulina" formControlName="tipoInsulina"/>
-
-  <label for="posologia">E-mail:</label>
-  <input type="text" id="posologia" formControlName="posologia"/>
-
-  <button type="submit">Enviar</button>
+<form [formGroup]="endocrinologiaForm" (ngSubmit)="enviarFormulario()"
+      class="max-w-md mx-auto mt-8 p-8 bg-white rounded shadow-md">
+  <div class="mb-4">
+    <label for="tipoInsulina" class="block text-gray-700 text-sm font-bold mb-2">Tipo Insulina:</label>
+    <input type="text" id="tipoInsulina" formControlName="tipoInsulina" class="w-full p-2 border rounded-md">
+  </div>
+  <div class="mb-4">
+    <label for="posologia" class="block text-gray-700 text-sm font-bold mb-2">Posologia:</label>
+    <input type="text" id="posologia" formControlName="posologia" class="w-full p-2 border rounded-md">
+  </div>
+  <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded-md">Enviar</button>
+  <a [routerLink]="['/usuario']" class="mt-2 w-full bg-gray-600 text-white p-2 rounded-md block text-center">Voltar</a>
 </form>
